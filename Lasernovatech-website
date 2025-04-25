@@ -1,0 +1,106 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import { ShieldCheck, Flame, SatelliteDish, Lock, DollarSign, User } from "lucide-react";
+
+export default function Home() {
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white">
+      <header className="p-6 flex justify-between items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-3xl font-bold">LaserNova</h1>
+        </motion.div>
+        <div className="flex gap-4">
+          <Button variant="outline" className="border-white text-white">
+            Login
+          </Button>
+          <Button className="bg-lime-500 text-black hover:bg-lime-600">
+            Get Started
+          </Button>
+        </div>
+      </header>
+
+      <section className="p-10 grid md:grid-cols-2 gap-10 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h2 className="text-4xl font-bold mb-4">Advanced Monitoring Solutions</h2>
+          <p className="text-lg mb-6">
+            We specialize in laser-based natural gas infrastructure monitoring and
+            integrated oil and gas technologies. Backed by R&D and innovation, LaserNova
+            ensures safety, performance, and sustainability in upstream to downstream operations.
+          </p>
+          <Button className="bg-lime-500 text-black hover:bg-lime-600">
+            Request a Demo
+          </Button>
+        </motion.div>
+        <motion.img
+          src="/infrastructure-monitoring.jpg"
+          alt="Monitoring Infrastructure"
+          className="rounded-2xl shadow-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        />
+      </section>
+
+      <section className="p-10 bg-gray-800 grid md:grid-cols-3 gap-6">
+        <Card className="bg-gray-900 text-white border border-gray-700">
+          <CardContent className="p-6">
+            <ShieldCheck className="w-10 h-10 mb-4 text-lime-500" />
+            <h3 className="text-xl font-semibold mb-2">Security First</h3>
+            <p>Military-grade encryption, zero-trust architecture, JWT-based OAuth2 auth, and real-time threat detection.</p>
+          </CardContent>
+        </Card>
+        <Card className="bg-gray-900 text-white border border-gray-700">
+          <CardContent className="p-6">
+            <Flame className="w-10 h-10 mb-4 text-orange-400" />
+            <h3 className="text-xl font-semibold mb-2">Laser-Based Gas Sensing</h3>
+            <p>Cutting-edge sensors for methane and hazardous gas leak detection in real-time.</p>
+          </CardContent>
+        </Card>
+        <Card className="bg-gray-900 text-white border border-gray-700">
+          <CardContent className="p-6">
+            <SatelliteDish className="w-10 h-10 mb-4 text-blue-400" />
+            <h3 className="text-xl font-semibold mb-2">Integrated Operations</h3>
+            <p>Seamless monitoring across drilling, production, and processing platforms.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="p-10 grid md:grid-cols-3 gap-6">
+        <Card className="bg-gray-900 text-white border border-gray-700">
+          <CardContent className="p-6">
+            <User className="w-10 h-10 mb-4 text-purple-400" />
+            <h3 className="text-xl font-semibold mb-2">User Dashboards</h3>
+            <p>Real-time monitoring visuals, alert history, customizable metrics, and downloadable reports.</p>
+          </CardContent>
+        </Card>
+        <Card className="bg-gray-900 text-white border border-gray-700">
+          <CardContent className="p-6">
+            <Lock className="w-10 h-10 mb-4 text-red-500" />
+            <h3 className="text-xl font-semibold mb-2">Secure Backend</h3>
+            <p>Encrypted DBs, secure APIs, rate-limiting, and firewalled infrastructure ensure data integrity and protection.</p>
+          </CardContent>
+        </Card>
+        <Card className="bg-gray-900 text-white border border-gray-700">
+          <CardContent className="p-6">
+            <DollarSign className="w-10 h-10 mb-4 text-green-400" />
+            <h3 className="text-xl font-semibold mb-2">Monetization Strategy</h3>
+            <p>Revenue through SaaS subscriptions, API access, hardware leasing, and R&D data licensing.</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <footer className="p-6 text-center text-sm text-gray-400">
+        &copy; {new Date().getFullYear()} LaserNova Technologies. All rights reserved.
+      </footer>
+    </main>
+  );
+}
